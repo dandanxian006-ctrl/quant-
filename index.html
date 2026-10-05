@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="一份从零搭建美国量化求职能力栈的中文路线图：方向选择、能力框架、项目、面试与 recruiting SOP。" />
+  <title>美国量化入门路线图｜从 0 到 Recruiting Ready</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23070913'/%3E%3Cpath d='M14 43 26 28l9 9 15-19' fill='none' stroke='%239879ff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='50' cy='18' r='5' fill='%234fcbff'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #060711;
+      --bg-2: #0a0c18;
+      --panel: rgba(15, 18, 34, .72);
+      --panel-strong: #111426;
+      --line: rgba(255,255,255,.10);
+      --line-strong: rgba(255,255,255,.18);
+      --text: #f6f4ff;
+      --muted: #aaaec0;
+      --purple: #a66cff;
+      --pink: #ef67b3;
+      --blue: #4fb9ff;
+      --cyan: #6ee7f7;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 78% 4%, rgba(58, 122, 255, .14), transparent 28rem),
+        radial-gradient(circle at 12% 18%, rgba(197, 56, 177, .12), transparent 25rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .23;
+      background-image: linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 70%);
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(6,7,17,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner { height: 70px; display: flex; align-items: center; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 750; letter-spacing: -.02em; text-decoration: none; white-space: nowrap; }
+    .brand-mark { width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.25); border-radius: 9px; display: grid; place-items: center; background: linear-gradient(135deg, rgba(234,85,181,.24), rgba(65,166,255,.25)); }
+    .brand-mark svg { width: 18px; height: 18px; }
+    .nav-links { margin-left: auto; display: flex; gap: 20px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .88rem; transition: .2s ease; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta, .primary {
+      border: 1px solid rgba(255,255,255,.18); border-radius: 10px; text-decoration: none;
+      background: linear-gradient(105deg, #b941a4, #536fce); color: white; font-weight: 700;
+      box-shadow: 0 12px 32px rgba(100,78,220,.22); transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .nav-cta { padding: 9px 15px; font-size: .86rem; }
+    .primary { display: inline-flex; align-items: center; justify-content: center; padding: 13px 19px; }
+    .nav-cta:hover, .primary:hover { transform: translateY(-2px); box-shadow: 0 16px 38px rgba(100,78,220,.34); }
+    .hero { min-height: 650px; display: grid; align-items: center; position: relative; isolation: isolate; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background:
+        radial-gradient(ellipse at 28% 58%, rgba(192,49,159,.42), transparent 34%),
+        radial-gradient(ellipse at 75% 43%, rgba(65,142,227,.44), transparent 38%),
+        linear-gradient(108deg, rgba(108,29,88,.84), rgba(116,80,160,.70) 48%, rgba(29,92,151,.78));
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 840px; height: 520px; right: -280px; top: 18px; z-index: -1;
+      background: repeating-conic-gradient(from 200deg at 12% 50%, rgba(255,255,255,.24) 0deg .7deg, transparent .7deg 4.5deg);
+      opacity: .42; transform: rotate(-8deg); mask-image: linear-gradient(90deg, transparent, black 25%, black 70%, transparent);
+    }
+    .hero-orbit { position: absolute; width: 640px; height: 230px; left: -170px; bottom: -120px; border: 2px solid rgba(255,255,255,.10); border-radius: 50%; transform: rotate(-5deg); }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .75fr; gap: 80px; align-items: center; padding: 110px 0 96px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 800; color: #efddff; }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    h1 { margin: 20px 0 24px; max-width: 790px; font-size: clamp(2rem, 5.2vw, 4.4rem); line-height: 1.02; letter-spacing: -.055em; font-weight: 770; }
+    h1 .guide { display: block; margin-top: .08em; font: inherit; letter-spacing: inherit; white-space: nowrap; }
+    .hero-copy { max-width: 680px; font-size: clamp(1.02rem, 1.4vw, 1.22rem); line-height: 1.8; color: rgba(255,255,255,.82); }
+    .hero-actions { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+    .ghost { display: inline-flex; align-items: center; justify-content: center; padding: 12px 18px; border: 1px solid rgba(255,255,255,.26); border-radius: 10px; text-decoration: none; color: white; background: rgba(8,9,18,.20); }
+    .hero-card { border: 1px solid rgba(255,255,255,.2); border-radius: 22px; padding: 24px; background: rgba(7,8,19,.46); backdrop-filter: blur(18px); box-shadow: 0 28px 80px rgba(5,5,18,.28); }
+    .hero-card-label { color: rgba(255,255,255,.6); font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; }
+    .hero-route { margin: 22px 0 0; padding: 0; list-style: none; }
+    .hero-route li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; position: relative; padding-bottom: 18px; color: rgba(255,255,255,.78); }
+    .hero-route li:not(:last-child)::after { content:""; position:absolute; left: 15px; top: 30px; width:1px; height: calc(100% - 12px); background: linear-gradient(var(--pink), var(--blue)); opacity: .7; }
+    .num { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.18); font-size: .74rem; font-weight: 800; }
+    .hero-route strong { display: block; color: #fff; line-height: 1.4; }
+    .hero-route span:last-child { font-size: .85rem; color: rgba(255,255,255,.54); }
+    section { padding: 110px 0; position: relative; }
+    .section-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; align-items: end; margin-bottom: 52px; }
+    .kicker { color: #a99bff; font-size: .76rem; font-weight: 800; text-transform: uppercase; letter-spacing: .14em; }
+    h2 { margin: 10px 0 0; font-size: clamp(2.25rem, 4.7vw, 4.4rem); line-height: 1.05; letter-spacing: -.05em; }
+    .lead { color: var(--muted); font-size: 1.04rem; max-width: 620px; margin: 0; }
+    .thesis { border-bottom: 1px solid var(--line); }
+    .principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .principle { min-height: 220px; padding: 26px; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(145deg, rgba(255,255,255,.045), rgba(255,255,255,.012)); }
+    .principle-index { font-family: Georgia, serif; font-size: 2.7rem; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.25); }
+    h3 { font-size: 1.28rem; margin: 20px 0 9px; letter-spacing: -.02em; }
+    .principle p, .card p { color: var(--muted); margin: 0; }
+    .role-switch { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+    .role-btn { color: #c5c8d5; background: #0f1222; border: 1px solid var(--line); padding: 10px 15px; border-radius: 999px; cursor: pointer; }
+    .role-btn[aria-selected="true"] { color: #fff; border-color: rgba(161,111,255,.7); background: linear-gradient(100deg, rgba(185,65,164,.35), rgba(79,126,220,.35)); }
+    .role-panel { display: none; grid-template-columns: 1.05fr .95fr; gap: 16px; }
+    .role-panel.active { display: grid; }
+    .role-main, .role-aside { padding: 30px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    .role-main h3 { margin-top: 0; font-size: 1.75rem; }
+    .clean-list { list-style: none; padding: 0; margin: 22px 0 0; }
+    .clean-list li { padding: 12px 0 12px 26px; border-top: 1px solid rgba(255,255,255,.07); position: relative; color: #d8d9e3; }
+    .clean-list li::before { content: ""; position: absolute; left: 2px; top: 22px; width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg,var(--pink),var(--blue)); box-shadow: 0 0 16px rgba(116,105,255,.8); }
+    .fit { margin-top: 20px; padding: 16px; border-radius: 12px; background: rgba(97,86,219,.12); border: 1px solid rgba(144,121,255,.25); color: #dcd6ff; }
+    .diagnostic { padding-top: 0; }
+    .diagnostic-shell { display: grid; grid-template-columns: 1fr .9fr; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: rgba(13,16,31,.76); }
+    .diagnostic-form, .diagnostic-result { padding: 34px; }
+    .diagnostic-result { background: linear-gradient(145deg, rgba(163,64,167,.14), rgba(52,119,200,.12)); border-left: 1px solid var(--line); }
+    .diagnostic h3 { margin-top: 0; font-size: 1.55rem; }
+    .field { margin-top: 24px; }
+    .field-label { display: block; margin-bottom: 10px; font-size: .82rem; font-weight: 750; color: #d7d8e3; }
+    .choices { display: flex; flex-wrap: wrap; gap: 8px; }
+    .choice { color: #aeb2c4; background: rgba(255,255,255,.025); border: 1px solid var(--line); padding: 9px 13px; border-radius: 10px; cursor: pointer; }
+    .choice.selected { color: white; border-color: rgba(166,108,255,.7); background: linear-gradient(110deg, rgba(187,68,166,.24), rgba(65,135,213,.24)); }
+    .diagnose-button { width: 100%; margin-top: 28px; border: 0; cursor: pointer; padding: 13px 18px; }
+    .result-label { color: #9d89ff; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; font-size: .72rem; }
+    .result-title { font-size: 1.7rem; margin: 10px 0 8px; }
+    .result-copy { color: var(--muted); }
+    .result-steps { counter-reset: plan; list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 11px; }
+    .result-steps li { counter-increment: plan; display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: start; color: #d8dae5; }
+    .result-steps li::before { content: counter(plan); width: 26px; height: 26px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; color: #a99bff; font-size: .72rem; }
+    .sop { background: linear-gradient(180deg, rgba(15,17,33,.25), rgba(10,12,24,.85)); border-block: 1px solid var(--line); }
+    .path { position: relative; display: grid; gap: 14px; }
+    .path::before { content:""; position: absolute; left: 32px; top: 34px; bottom: 34px; width: 1px; background: linear-gradient(var(--pink), var(--purple), var(--blue), var(--cyan)); }
+    .phase { display: grid; grid-template-columns: 66px 1fr; gap: 18px; align-items: stretch; }
+    .phase-dot { position: relative; z-index: 1; width: 66px; height: 66px; display: grid; place-items: center; border-radius: 50%; background: #0d1020; border: 1px solid rgba(255,255,255,.2); color: #fff; font-family: Georgia, serif; font-size: 1.25rem; }
+    .phase-card { border: 1px solid var(--line); border-radius: 18px; background: rgba(15,18,34,.78); overflow: hidden; }
+    .phase-top { padding: 24px 26px; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; cursor: pointer; }
+    .phase-top h3 { margin: 0 0 5px; }
+    .phase-top p { margin: 0; color: var(--muted); }
+    .phase-tag { color: #b5b9c9; border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; font-size: .74rem; white-space: nowrap; }
+    .phase-body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); max-height: 0; overflow: hidden; transition: max-height .45s ease; }
+    .phase.open .phase-body { max-height: 520px; }
+    .phase-body > div { padding: 22px 24px; background: #0d1020; }
+    .phase-body h4 { margin: 0 0 8px; color: #fff; font-size: .9rem; }
+    .phase-body p { margin: 0; color: var(--muted); font-size: .89rem; }
+    .matrix { display: grid; grid-template-columns: repeat(2,1fr); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+    .card { padding: 28px; min-height: 260px; border-bottom: 1px solid var(--line); }
+    .card:nth-child(odd) { border-right: 1px solid var(--line); }
+    .card:nth-last-child(-n+2) { border-bottom: 0; }
+    .card-no { font-size: .72rem; color: #8e93a6; letter-spacing: .12em; }
+    .mini-list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; color: #d6d8e2; font-size: .92rem; }
+    .mini-list li { display: flex; gap: 9px; }
+    .mini-list li::before { content: "+"; color: #9d7cff; font-weight: 800; }
+    .system-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px; }
+    .tracker, .interview-map { border: 1px solid var(--line); border-radius: 20px; background: var(--panel); padding: 28px; }
+    .tracker h3, .interview-map h3 { margin-top: 0; }
+    .check { display: flex; gap: 12px; align-items: flex-start; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.07); color: #d8dae5; cursor: pointer; }
+    .check input { appearance: none; width: 20px; height: 20px; border: 1px solid rgba(255,255,255,.27); border-radius: 6px; margin: 3px 0 0; flex: 0 0 auto; }
+    .check input:checked { background: linear-gradient(135deg,var(--pink),var(--blue)); box-shadow: inset 0 0 0 4px #101326; }
+    .check:has(input:checked) span { color: #7f8395; text-decoration: line-through; }
+    .progress-shell { height: 6px; background: rgba(255,255,255,.08); border-radius: 99px; overflow: hidden; margin: 22px 0 8px; }
+    .progress { height: 100%; width: 0; background: linear-gradient(90deg,var(--pink),var(--blue)); transition: width .3s ease; }
+    .progress-label { font-size: .78rem; color: #8f94a8; }
+    .loop { display: grid; grid-template-columns: repeat(5,1fr); gap: 8px; margin-top: 22px; }
+    .loop-step { padding: 18px 12px; min-height: 128px; border: 1px solid var(--line); background: rgba(255,255,255,.025); border-radius: 13px; }
+    .loop-step b { display: block; color: #a996ff; font-size: .72rem; margin-bottom: 12px; }
+    .loop-step span { font-size: .85rem; color: #d1d3de; }
+    .warn { margin-top: 18px; padding: 18px; background: rgba(236,91,164,.08); border-left: 2px solid var(--pink); color: #c8cad6; font-size: .9rem; }
+    .qa { border-top: 1px solid var(--line); }
+    details { border-bottom: 1px solid var(--line); }
+    summary { list-style: none; padding: 23px 0; cursor: pointer; font-weight: 700; display: flex; justify-content: space-between; gap: 20px; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:"+"; color: #a99bff; font-size: 1.25rem; font-weight: 400; }
+    details[open] summary::after { content:"−"; }
+    details p { color: var(--muted); max-width: 860px; margin: -4px 0 24px; }
+    .closing { padding-bottom: 70px; }
+    .closing-panel { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.16); border-radius: 24px; padding: 52px; background: linear-gradient(110deg, rgba(157,45,133,.64), rgba(88,86,173,.62) 48%, rgba(40,115,174,.66)); }
+    .closing-panel::after { content:""; position:absolute; width: 520px; height: 380px; right:-140px; top:-90px; background: repeating-conic-gradient(from 200deg at 0 60%, rgba(255,255,255,.22) 0deg .6deg, transparent .6deg 5deg); opacity:.36; }
+    .closing h2 { max-width: 800px; font-size: clamp(2.4rem,5vw,4.8rem); position: relative; z-index: 1; }
+    .closing p { max-width: 680px; color: rgba(255,255,255,.78); position: relative; z-index: 1; }
+    footer { display: flex; justify-content: space-between; gap: 20px; color: #777c91; font-size: .8rem; padding: 28px 0 46px; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (max-width: 920px) {
+      .nav-links { display:none; }
+      .hero { min-height: 0; }
+      .hero-grid, .section-head, .role-panel.active, .system-grid, .diagnostic-shell { grid-template-columns: 1fr; }
+      .hero-grid { gap: 36px; padding: 78px 0 70px; }
+      .hero-card { max-width: 560px; }
+      .section-head { gap: 20px; }
+      .principles { grid-template-columns: 1fr; }
+      .loop { grid-template-columns: repeat(2,1fr); }
+      .diagnostic-result { border-left: 0; border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 660px) {
+      .wrap { width: min(var(--max), calc(100% - 26px)); }
+      .nav-cta { display: none; }
+      .nav-inner { height: 62px; }
+      section { padding: 76px 0; }
+      h1 { font-size: clamp(2rem, 8.2vw, 3rem); }
+      .hero::after { right: -500px; }
+      .matrix { grid-template-columns: 1fr; }
+      .card, .card:nth-child(odd), .card:nth-last-child(-n+2) { border-right: 0; border-bottom: 1px solid var(--line); }
+      .card:last-child { border-bottom: 0; }
+      .phase { grid-template-columns: 48px 1fr; gap: 12px; }
+      .phase-dot { width: 48px; height: 48px; }
+      .path::before { left: 23px; }
+      .phase-top { grid-template-columns: 1fr; padding: 20px; }
+      .phase-tag { width: fit-content; }
+      .phase-body { grid-template-columns: 1fr; }
+      .phase.open .phase-body { max-height: 900px; }
+      .loop { grid-template-columns: 1fr; }
+      .closing-panel { padding: 32px 24px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="主导航">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m4 17 5-6 4 4 7-10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>QUANT / START</a>
+      <div class="nav-links">
+        <a href="#roles">方向</a><a href="#sop">SOP</a><a href="#skills">能力栈</a><a href="#recruiting">Recruiting</a><a href="#qa">FAQ</a>
+      </div>
+      <a class="nav-cta" href="#sop">查看路线</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="hero-orbit" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">U.S. Quant Recruiting Playbook</span>
+          <h1>从零开始的<span class="guide">Quant Recruiting Guide</span></h1>
+          <p class="hero-copy">把“学什么、做到什么程度、什么时候开始投、面试怎么准备”放进同一张地图。它不是速成承诺，而是一套能反复执行、复盘和迭代的美国量化入门框架。</p>
+          <div class="hero-actions"><a class="primary" href="#sop">进入完整 SOP</a><a class="ghost" href="#roles">先选方向</a></div>
+        </div>
+        <aside class="hero-card" aria-label="路线概览">
+          <div class="hero-card-label">THE WHOLE SYSTEM</div>
+          <ol class="hero-route">
+            <li><span class="num">01</span><span><strong>选对目标岗位</strong><span>QR / QT / QD，要求不一样</span></span></li>
+            <li><span class="num">02</span><span><strong>搭建底层能力</strong><span>概率、统计、编程与市场直觉</span></span></li>
+            <li><span class="num">03</span><span><strong>做出可讲项目</strong><span>从结论到假设、验证与复盘</span></span></li>
+            <li><span class="num">04</span><span><strong>进入招聘系统</strong><span>简历、投递、笔试、面试、选择</span></span></li>
+          </ol>
+        </aside>
+      </div>
+    </header>
+
+    <section class="thesis">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">Before everything</div><h2>先改掉三个<br>常见误区</h2></div><p class="lead">大多数人卡住，不是因为题做得不够多，而是顺序错了：没选岗位就堆知识；没定义标准就做项目；等“准备完”才开始 recruiting。</p></div>
+        <div class="principles">
+          <article class="principle reveal"><div class="principle-index">01</div><h3>量化不是一个岗位</h3><p>研究、交易、开发的筛选信号不同。先明确目标，再决定数学深度、代码重心和项目形态。</p></article>
+          <article class="principle reveal"><div class="principle-index">02</div><h3>项目不是作品展示</h3><p>真正被评估的是你的研究过程：问题怎么定义，偏差怎么发现，结果为什么可信，失败后怎么改。</p></article>
+          <article class="principle reveal"><div class="principle-index">03</div><h3>Recruiting 是并行系统</h3><p>信息、简历、投递和 mock 不应等到最后。学习与求职要同时推进，反馈才会更快进入下一轮训练。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">01 / Pick your lane</div><h2>先选赛道，<br>再配能力</h2></div><p class="lead">如果还不确定，可以同时探索，但简历与面试准备必须有主线。点击岗位，查看最核心的筛选信号。</p></div>
+        <div class="role-switch" role="tablist" aria-label="岗位选择">
+          <button class="role-btn" role="tab" aria-selected="true" data-role="qr">Quant Researcher</button>
+          <button class="role-btn" role="tab" aria-selected="false" data-role="qt">Quant Trader</button>
+          <button class="role-btn" role="tab" aria-selected="false" data-role="qd">Quant Developer</button>
+        </div>
+        <div class="role-panel active" id="qr" role="tabpanel">
+          <article class="role-main"><h3>Quant Researcher · 研究</h3><p>围绕数据提出假设、设计验证、构建模型，并把研究结论转化为可执行的交易信号。</p><ul class="clean-list"><li>概率统计与推断：分布、估计、假设检验、回归、时间序列</li><li>研究能力：实验设计、数据泄漏、过拟合、稳健性与解释</li><li>代码：Python 数据栈、向量化、清晰可复现的 research pipeline</li></ul></article>
+          <aside class="role-aside"><div class="kicker">Hiring signal</div><h3>比“模型复杂”更重要</h3><p>能否把模糊问题拆成可检验假设；能否发现数据与评估中的陷阱；能否清楚解释结果为何成立。</p><div class="fit"><strong>更适合：</strong>喜欢研究、数据、建模，愿意长时间追问“这个结论是真的吗？”</div></aside>
+        </div>
+        <div class="role-panel" id="qt" role="tabpanel">
+          <article class="role-main"><h3>Quant Trader · 交易</h3><p>在不完整信息和时间压力下做判断，理解风险收益，并持续优化执行与策略。</p><ul class="clean-list"><li>概率与心算：条件概率、期望、博弈、快速估算</li><li>决策：赔率、仓位、信息更新、压力下的稳定表达</li><li>市场直觉：做市、价差、库存风险、流动性与 adverse selection</li></ul></article>
+          <aside class="role-aside"><div class="kicker">Hiring signal</div><h3>速度之外还有校准</h3><p>不是单纯“算得快”，而是能在新信息出现时调整判断，知道什么时候激进、什么时候保守。</p><div class="fit"><strong>更适合：</strong>喜欢竞技、即时反馈、博弈和高密度决策，对数字敏感且情绪稳定。</div></aside>
+        </div>
+        <div class="role-panel" id="qd" role="tabpanel">
+          <article class="role-main"><h3>Quant Developer · 工程</h3><p>让研究和交易系统可靠地运行：数据、回测、执行、性能、基础设施与工具链。</p><ul class="clean-list"><li>计算机基础：数据结构、算法、操作系统、网络、并发</li><li>工程质量：测试、可观测性、故障边界、性能分析</li><li>语言：C++/Python 为主，理解内存、延迟与生产系统取舍</li></ul></article>
+          <aside class="role-aside"><div class="kicker">Hiring signal</div><h3>正确、清晰、可扩展</h3><p>面试官关心你能否写对代码、分析复杂度、解释系统权衡，并把模糊需求变成可靠实现。</p><div class="fit"><strong>更适合：</strong>享受搭系统、排查问题、优化性能，希望离交易场景很近但以工程为主。</div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="diagnostic" aria-labelledby="diagnostic-title">
+      <div class="wrap">
+        <div class="diagnostic-shell reveal">
+          <div class="diagnostic-form">
+            <div class="kicker">Interactive / Route finder</div>
+            <h3 id="diagnostic-title">用 3 个选择，找到你的起点</h3>
+            <div class="field"><span class="field-label">1. 你更享受哪种工作？</span><div class="choices" data-question="interest"><button class="choice selected" data-value="research">从数据找规律</button><button class="choice" data-value="decision">快速做判断</button><button class="choice" data-value="build">把系统做可靠</button></div></div>
+            <div class="field"><span class="field-label">2. 当前最强的基础？</span><div class="choices" data-question="base"><button class="choice selected" data-value="math">数学 / 统计</button><button class="choice" data-value="code">编程 / 工程</button><button class="choice" data-value="start">都在起步</button></div></div>
+            <div class="field"><span class="field-label">3. 目前所在阶段？</span><div class="choices" data-question="stage"><button class="choice selected" data-value="explore">还在探索</button><button class="choice" data-value="project">正在做项目</button><button class="choice" data-value="apply">准备投递</button></div></div>
+            <button class="primary diagnose-button" type="button">生成我的下一步</button>
+          </div>
+          <div class="diagnostic-result" aria-live="polite">
+            <div class="result-label">Recommended starting point</div>
+            <h3 class="result-title">QR 探索线 · 先做基线诊断</h3>
+            <p class="result-copy">你对研究型任务更有兴趣，且数学基础可以成为早期优势。先验证自己是否享受完整研究闭环，再决定是否继续加深。</p>
+            <ol class="result-steps"><li>做一次概率与 Python 基线测试</li><li>复现一个公开数据上的简单 baseline</li><li>写一页研究 memo：假设、方法、结果、局限</li></ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sop" id="sop">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">02 / The SOP</div><h2>一套可执行的<br>五阶段路线</h2></div><p class="lead">不按固定周数推进，而按“出口标准”推进。每一阶段都必须留下可验证的产出，才能进入下一阶段。点击每一阶段展开。</p></div>
+        <div class="path">
+          <article class="phase open reveal"><div class="phase-dot">01</div><div class="phase-card"><div class="phase-top"><div><h3>定位与基线诊断</h3><p>把模糊的“想做量化”变成明确目标。</p></div><span class="phase-tag">出口：目标清单</span></div><div class="phase-body"><div><h4>要做什么</h4><p>列出 QR / QT / QD 的岗位差异；按背景、兴趣、优势选 1 个主线与 1 个备选。</p></div><div><h4>交付物</h4><p>20–30 家公司池、目标岗位 JD 关键词表、数学/代码/经历三项基线评分。</p></div><div><h4>不要做</h4><p>一上来刷几百题；只盯头部公司；因为专业不“对口”就自我筛掉。</p></div></div></div></article>
+          <article class="phase reveal"><div class="phase-dot">02</div><div class="phase-card"><div class="phase-top"><div><h3>底层能力搭建</h3><p>以面试和项目会真实调用的知识为边界。</p></div><span class="phase-tag">出口：能解释 + 能使用</span></div><div class="phase-body"><div><h4>数学</h4><p>概率、随机变量、条件期望、统计推断、线性代数；QR 再深入回归与时间序列。</p></div><div><h4>编程</h4><p>Python 熟练度、数据结构与算法；QD 增加 C++、并发、系统与性能。</p></div><div><h4>训练方式</h4><p>每个概念完成“定义 → 直觉 → 推导 → 代码 → 反例”，避免只看课不输出。</p></div></div></div></article>
+          <article class="phase reveal"><div class="phase-dot">03</div><div class="phase-card"><div class="phase-top"><div><h3>项目与叙事闭环</h3><p>做一个小而完整、经得住追问的项目。</p></div><span class="phase-tag">出口：5 分钟讲清</span></div><div class="phase-body"><div><h4>问题设计</h4><p>从一个明确问题开始：预测什么、为何有意义、什么算成功、基线是什么。</p></div><div><h4>可信验证</h4><p>时间切分、交易成本、泄漏检查、敏感性分析、失败案例与稳健性测试。</p></div><div><h4>表达结构</h4><p>Context → Hypothesis → Method → Result → Failure → Next step，准备 30 秒和 5 分钟版本。</p></div></div></div></article>
+          <article class="phase reveal"><div class="phase-dot">04</div><div class="phase-card"><div class="phase-top"><div><h3>Recruiting 资产上线</h3><p>让市场尽早给你的准备方向反馈。</p></div><span class="phase-tag">出口：可投递</span></div><div class="phase-body"><div><h4>简历</h4><p>一页，先写结果和证据，再写方法；每个 bullet 都能被深挖十分钟。</p></div><div><h4>投递系统</h4><p>按公司、岗位、时间、状态、联系人、下一步维护 tracker；分批投递并复盘转化率。</p></div><div><h4>Networking</h4><p>以具体问题开启对话，目标是获得信息校准，不是向陌生人直接索要 referral。</p></div></div></div></article>
+          <article class="phase reveal"><div class="phase-dot">05</div><div class="phase-card"><div class="phase-top"><div><h3>面试冲刺与复盘</h3><p>把知识训练成压力下可调用的表现。</p></div><span class="phase-tag">出口：稳定通过</span></div><div class="phase-body"><div><h4>题型训练</h4><p>概率、brain teaser、coding、market making、research case 按岗位配比，不平均用力。</p></div><div><h4>Mock</h4><p>至少覆盖技术、项目深挖和行为面；录音复盘表达、停顿、假设和自我纠错。</p></div><div><h4>错题闭环</h4><p>记录题目背后的能力缺口，24 小时内重做，7 天后无提示复测。</p></div></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">03 / Skill stack</div><h2>能力栈，具体<br>学到什么程度</h2></div><p class="lead">“学过”不算掌握。以下每一层都用可观察的行为定义完成度：能推、能写、能解释、能在新题里迁移。</p></div>
+        <div class="matrix reveal">
+          <article class="card"><span class="card-no">A / PROBABILITY</span><h3>概率与统计</h3><p>所有岗位共通的语言。重点不是背公式，而是把不确定性变成可计算的决策。</p><ul class="mini-list"><li>条件概率、Bayes、期望、方差、常见分布</li><li>组合计数、随机过程直觉、估计与检验</li><li>能口述假设，写出推导，并做 sanity check</li></ul></article>
+          <article class="card"><span class="card-no">B / PROGRAMMING</span><h3>编程与算法</h3><p>先保证正确与清晰，再追求速度。面试代码要能边写边讲，项目代码要可复现。</p><ul class="mini-list"><li>Python：数据处理、模拟、测试、性能意识</li><li>DSA：数组、哈希、树、图、动态规划基础</li><li>QD：C++、内存、并发、网络与系统设计</li></ul></article>
+          <article class="card"><span class="card-no">C / RESEARCH</span><h3>研究与数据</h3><p>优秀项目的核心不是高收益曲线，而是研究流程中对偏差和失败的控制。</p><ul class="mini-list"><li>明确基线、指标与样本外评估</li><li>避免 look-ahead、survivorship 和 data snooping</li><li>加入成本、容量、稳定性和 regime 分析</li></ul></article>
+          <article class="card"><span class="card-no">D / MARKET SENSE</span><h3>市场与交易直觉</h3><p>不需要先成为金融专家，但要理解价格、风险、流动性与参与者行为如何连接。</p><ul class="mini-list"><li>收益、波动率、相关性、风险调整后收益</li><li>订单簿、点差、做市、库存风险与执行</li><li>能把模型输出翻译成交易约束</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="recruiting">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">04 / Recruiting OS</div><h2>把求职做成<br>可迭代系统</h2></div><p class="lead">真正有效的准备不是“感觉差不多了”，而是每一项都有状态、有数据、有下一步。下面的清单会保存在当前浏览器。</p></div>
+        <div class="system-grid">
+          <article class="tracker reveal"><h3>Recruiting Ready 清单</h3><label class="check"><input type="checkbox"><span>我能清楚解释目标岗位与备选岗位的差异</span></label><label class="check"><input type="checkbox"><span>我有一页简历，每个 bullet 都能被深挖</span></label><label class="check"><input type="checkbox"><span>我有至少一个可讲清研究闭环的项目</span></label><label class="check"><input type="checkbox"><span>我建立了公司池与投递 tracker</span></label><label class="check"><input type="checkbox"><span>我完成过限时技术 mock 并复盘</span></label><label class="check"><input type="checkbox"><span>我准备了 why quant / why role / why firm</span></label><div class="progress-shell"><div class="progress"></div></div><div class="progress-label">完成度 0%</div></article>
+          <article class="interview-map reveal"><h3>典型面试漏斗</h3><p>不同公司、岗位和候选人流程会变化，把这张图当作准备框架，而不是固定顺序。</p><div class="loop"><div class="loop-step"><b>01</b><span>简历筛选<br>背景与信号</span></div><div class="loop-step"><b>02</b><span>OA / Phone<br>概率与代码</span></div><div class="loop-step"><b>03</b><span>Technical<br>速度与深度</span></div><div class="loop-step"><b>04</b><span>Superday<br>多轮交叉验证</span></div><div class="loop-step"><b>05</b><span>Team Match<br>方向与适配</span></div></div><div class="warn"><strong>最值得提前做的事：</strong>在正式面试前，让 mock 暴露问题。面试失败给你的信息太贵，不能把它当第一次完整练习。</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="qa" id="qa">
+      <div class="wrap">
+        <div class="section-head reveal"><div><div class="kicker">05 / Questions</div><h2>常见问题，<br>直接回答</h2></div><p class="lead">这条路没有唯一背景模板，但有相对稳定的评估逻辑：学习速度、问题拆解、数理基础、代码质量和清晰表达。</p></div>
+        <details><summary>非名校 / 非数学专业，还有机会吗？</summary><p>有，但需要更主动地建立“可验证信号”：高质量课程成绩、竞赛或科研、扎实项目、强代码表现、相关实习，以及能帮助你通过筛选的有效连接。不要用背景否定自己，也不要忽略筛选现实。</p></details>
+        <details><summary>要不要先学完整的金融知识？</summary><p>通常不需要。先掌握收益、风险、市场微观结构和衍生品的基本直觉，再根据目标岗位加深。多数入门准备的瓶颈仍然是概率、统计、编程和问题求解。</p></details>
+        <details><summary>项目一定要做量化策略吗？</summary><p>不一定。一个扎实的预测、优化、实验或系统项目，只要体现了清晰假设、严谨验证和真实取舍，同样可以成为强信号。关键是岗位相关性与叙事质量。</p></details>
+        <details><summary>什么时候开始投递？</summary><p>不要等到“全部准备完”。当简历没有明显硬伤、基础题能稳定完成、项目能讲清时，就可以分批开始。具体开放时间每年会变，应以公司官方 careers 页面为准。</p></details>
+        <details><summary>刷题数量越多越好吗？</summary><p>不是。更好的指标是：同类题能否识别结构、是否能在限制时间内表达思路、错题是否真正闭环。盲目追数量会掩盖能力缺口。</p></details>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="wrap">
+        <div class="closing-panel reveal"><div class="kicker" style="color:#fff">A tested framework</div><h2>不靠速成，靠一套能持续复利的方法。</h2><p>我也在用这套路径陪 mentee 从定位、搭框架、做项目到准备 recruiting。每个人的背景和节奏不同，但判断标准可以清楚、训练过程可以复盘、下一步可以具体。</p><a class="primary" href="#top">回到路线起点</a></div>
+        <footer><span>QUANT / START · 美国量化入门路线图</span><span>仅作教育与求职准备参考，不构成 offer 保证或投资建议。</span></footer>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const roleButtons = document.querySelectorAll('.role-btn');
+    const rolePanels = document.querySelectorAll('.role-panel');
+    roleButtons.forEach(button => button.addEventListener('click', () => {
+      roleButtons.forEach(item => item.setAttribute('aria-selected', 'false'));
+      rolePanels.forEach(panel => panel.classList.remove('active'));
+      button.setAttribute('aria-selected', 'true');
+      document.getElementById(button.dataset.role).classList.add('active');
+    }));
+
+    const routeState = { interest: 'research', base: 'math', stage: 'explore' };
+    document.querySelectorAll('.choices').forEach(group => group.querySelectorAll('.choice').forEach(choice => {
+      choice.addEventListener('click', () => {
+        group.querySelectorAll('.choice').forEach(item => item.classList.remove('selected'));
+        choice.classList.add('selected');
+        routeState[group.dataset.question] = choice.dataset.value;
+      });
+    }));
+    const routeCopy = {
+      research: { role: 'QR 研究线', copy: '你偏好从数据和假设中寻找规律，研究岗位更值得优先探索。重点训练严谨验证，而不是堆模型。' },
+      decision: { role: 'QT 交易线', copy: '你偏好快速判断和即时反馈，交易岗位更值得优先探索。重点训练概率直觉、校准与压力表达。' },
+      build: { role: 'QD 工程线', copy: '你偏好把系统做稳、做快，开发岗位更值得优先探索。重点训练代码质量、系统基础与性能取舍。' }
+    };
+    const baseStep = { math: '用代码把你的数学优势变成可展示的分析', code: '补齐概率基础，并把工程优势放进交易场景', start: '先用两周做数学与代码双基线，再决定主攻项' };
+    const stageSteps = {
+      explore: ['完成一次目标岗位 JD 拆解', '做一个最小能力基线测试', '找一位从业者校准岗位理解'],
+      project: ['给项目补上明确 baseline', '排查泄漏、成本与样本外验证', '准备 30 秒与 5 分钟项目讲法'],
+      apply: ['逐条审计简历可追问点', '分批投递并记录转化率', '安排限时 mock 与 7 天错题复测']
+    };
+    document.querySelector('.diagnose-button').addEventListener('click', () => {
+      const profile = routeCopy[routeState.interest];
+      const stageName = { explore: '先做基线诊断', project: '把项目做成证据', apply: '进入投递闭环' }[routeState.stage];
+      document.querySelector('.result-title').textContent = profile.role + ' · ' + stageName;
+      document.querySelector('.result-copy').textContent = profile.copy + ' ' + baseStep[routeState.base] + '。';
+      const steps = stageSteps[routeState.stage];
+      document.querySelector('.result-steps').innerHTML = steps.map(step => '<li>' + step + '</li>').join('');
+      document.querySelector('.diagnostic-result').animate([{ opacity: .45, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 380, easing: 'ease-out' });
+    });
+
+    document.querySelectorAll('.phase-top').forEach(top => top.addEventListener('click', () => {
+      top.closest('.phase').classList.toggle('open');
+    }));
+
+    const checks = [...document.querySelectorAll('.check input')];
+    checks.forEach((box, index) => {
+      box.checked = localStorage.getItem('quant-check-' + index) === '1';
+      box.addEventListener('change', () => { localStorage.setItem('quant-check-' + index, box.checked ? '1' : '0'); updateProgress(); });
+    });
+    function updateProgress() {
+      const done = checks.filter(box => box.checked).length;
+      const value = Math.round(done / checks.length * 100);
+      document.querySelector('.progress').style.width = value + '%';
+      document.querySelector('.progress-label').textContent = '完成度 ' + value + '%';
+    }
+    updateProgress();
+
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
